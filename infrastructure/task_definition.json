@@ -1,0 +1,43 @@
+[
+        {
+            "name": "autz-poc_server",
+            "image": "openfga/openfga",
+            "command": [
+                "run"
+            ],
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                },
+                {
+                    "containerPort": 8080,
+                    "hostPort": 8080,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "OPENFGA_DATASTORE_ENGINE",
+                    "value": "postgres"
+                },
+                {
+                    "name": "OPENFGA_DATASTORE_URI",
+                    "value" : "postgres://authz_admin:wochild1@tf-20230725121920458200000001.czuxid3h8hzr.us-east-1.rds.amazonaws.com:5432/authz?sslmode=disable"
+                }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "autz-poc",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+]
