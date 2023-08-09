@@ -26,7 +26,7 @@
                 },
                 {
                     "name": "OPENFGA_DATASTORE_URI",
-                    "value" : "postgres://authz_admin:wochild1@tf-20230725121920458200000001.czuxid3h8hzr.us-east-1.rds.amazonaws.com:5432/authz?sslmode=disable"
+                    "value" : "postgres://[user]/[pass]@tf-20230725121920458200000001.czuxid3h8hzr.us-east-1.rds.amazonaws.com:5432/authz?sslmode=disable"
                 }
             ],
             "mountPoints": [],
